@@ -6,26 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M5 Robot Controller</title>
     <link rel="stylesheet" href="robotControl.css">
+    <!-- mqtt.js library -->
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
 </head>
 
 <body>
     <h1>Robot Controller</h1>
 
+    <button id="connectBtn">Connect</button>
+    <button id="disconnectBtn">Disconnect</button>
+
+    <br>
+
     <div class="controlBtns">
         <div class="topRow">
-            <button class="btn">▲</button>
+            <button class="btn" name="up">▲</button>
         </div>
 
         <div class="middleRow">
-            <button class="btn">◀</button>
-            <button class="btn">■</button>
-            <button class="btn">▶</button>
+            <button class="btn" name="left">◀</button>
+            <button class="btn" name="stop">■</button>
+            <button class="btn" name="right">▶</button>
         </div>
 
         <div class="bottomRow">
-            <button class="btn">▼</button>
+            <button class="btn" name="down">▼</button>
         </div>
+
+
     </div>
+
+    <script src="robotControls.js"></script>
+
 </body>
 
 </html>
