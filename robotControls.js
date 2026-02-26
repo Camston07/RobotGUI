@@ -1,4 +1,4 @@
-const brokerUrl = "wss://IoT.ScheduleCare.ca:8081/mqtt";
+const brokerUrl = "wss://IoT.ScheduleCare.ca:8081";
 const topic = "Cam&Nev/m5stickcplus/robot/control";
 const mqttUser = "EMBED";
 const mqttPwd = "P@ssword!";
@@ -59,7 +59,7 @@ function disconnectFromMqttBroker() {
         client.end();
         alert("Disconnected from MQTT broker");
     } else {
-        alert("Not Connected, can't disconnecte");
+        alert("Not Connected, can't disconnect");
     }
 }
 
@@ -68,6 +68,6 @@ function sendCommand(cmd) {
         client.publish(topic, cmd);
         console.log(`Send Command ${cmd}`);
     } else {
-        console.log("Not connected, can;t send message");
+        console.log("Not connected, can't send message");
     }
 }
