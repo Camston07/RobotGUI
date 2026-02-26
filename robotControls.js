@@ -1,5 +1,5 @@
-const brokerUrl = "wss://test.mosquitto.org:8081/mqtt";
-const topic = "m5stickcplus/robot/control";
+import { brokerUrl } from "./config";
+import { topic } from "./config";
 
 let client = null;
 
