@@ -1,7 +1,5 @@
 const brokerUrl = "wss://IoT.ScheduleCare.ca:8081";
 const topic = "Cam&Nev/m5stickcplus/robot/control";
-const mqttUser = "EMBED";
-const mqttPwd = "P@ssword!";
 
 let client = null;
 
@@ -34,9 +32,11 @@ function connectToMqttBroker() {
     }
 
     client = mqtt.connect(brokerUrl, {
-        username: mqttUser,
-        password: mqttPwd,
-        protocol: "wss"
+        username: "EMBED",
+        password: "P@ssword!",
+        protocol: "wss",
+        clean: true,
+        reconnectPeriod: 0
     });
 
     client.on("connect", () => {
