@@ -1,5 +1,5 @@
-import { brokerUrl } from "./config";
-import { topic } from "./config";
+const brokerUrl = "wss://IoT.ScheduleCare.ca:8081/mqtt";
+const topic = "Cam&Nev/m5stickcplus/robot/control";
 
 let client = null;
 
