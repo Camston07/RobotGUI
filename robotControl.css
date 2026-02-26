@@ -1,4 +1,31 @@
 body {
-    color: red;
-    background-color: blue;
+    text-align: center;
+}
+
+.controlBtns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.topRow,
+.bottomRow {
+    display: flex;
+    justify-content: center;
+}
+
+.middleRow {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn {
+    width: 90px;
+    height: 90px;
+    font-size: 32px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
 }
