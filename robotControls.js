@@ -1,11 +1,12 @@
-const brokerUrl = "wss://IoT.ScheduleCare.ca:8081/mqtt";
-const topic = "Cam&Nev/m5stickcplus/robot/control";
+const brokerUrl = "wss://test.mosquitto.org:8081/mqtt";
+const topic = "m5stickcplus/robot/control";
 
 let client = null;
 
 function main() {
     setupConnectionButtons();
     setupControlButtons();
+
 }
 
 main();
@@ -31,12 +32,7 @@ function connectToMqttBroker() {
         return;
     }
 
-    client = mqtt.connect(brokerUrl, {
-        username: "EMBED",
-        password: "P@ssword!",
-        clean: true,
-        reconnectPeriod: 0
-    });
+    client = mqtt.connect(brokerUrl);
 
     client.on("connect", () => {
         console.log("Connected to MQTT broker");
