@@ -1,6 +1,3 @@
-const brokerUrl = "wss://test.mosquitto.org:8081/mqtt";
-const topic = "m5stickcplus/robot/control";
-
 let client = null;
 
 function main() {
@@ -32,7 +29,15 @@ function connectToMqttBroker() {
         return;
     }
 
-    client = mqtt.connect(brokerUrl);
+    let brokerUrl = "wss://test.mosquitto.org:8081/mqtt";
+    let userName = "Cam-n-Nev";
+    let pwd = "6Z4hn/4X!PLj";
+
+    client = mqtt.connect(brokerUrl, {
+        username: userName,
+        password: pwd,
+        protocol: "wss"
+    });
 
     client.on("connect", () => {
         console.log("Connected to MQTT broker");
@@ -59,6 +64,8 @@ function disconnectFromMqttBroker() {
 }
 
 function sendCommand(cmd) {
+    let topic = "m5stickcplus/robot/control";
+
     if (client && client.connected) {
         client.publish(topic, cmd);
         console.log(`Send Command ${cmd}`);
