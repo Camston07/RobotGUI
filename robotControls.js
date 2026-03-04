@@ -29,7 +29,7 @@ function connectToMqttBroker() {
         return;
     }
 
-    let brokerUrl = "wss://test.mosquitto.org:8081/mqtt";
+    let brokerUrl = "wss://IoT.ScheduleCare.ca:8081";
     let userName = "Cam-n-Nev";
     let pwd = "6Z4hn/4X!PLj";
 
