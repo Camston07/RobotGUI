@@ -29,7 +29,7 @@ function connectToMqttBroker() {
         return;
     }
 
-    let brokerUrl = "ws://IoT.ScheduleCare.ca:8083";
+    let brokerUrl = "wss://IoT.ScheduleCare.ca:8083";
     let userName = "Cam-n-Nev";
     let pwd = "6Z4hn/4X!PLj";
 
