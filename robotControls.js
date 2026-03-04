@@ -63,7 +63,7 @@ function disconnectFromMqttBroker() {
 }
 
 function sendCommand(cmd) {
-    let topic = "CamNev/m5stickcplus/robot/control";
+    let topic = "EMBED/CamNev/m5stickcplus/robot/control";
 
     if (client && client.connected) {
         client.publish(topic, cmd);
