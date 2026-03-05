@@ -1,9 +1,15 @@
+// Private EMBED Broker
+// let topic = "EMBED/CamNev/m5stickcplus/robot/control";
+
+// Public Broker
+let topic = "m5stickcplus/robot/control";
+
+
 let client = null;
 
 function main() {
     setupConnectionButtons();
     setupControlButtons();
-
 }
 
 main();
@@ -29,14 +35,19 @@ function connectToMqttBroker() {
         return;
     }
 
-    let brokerUrl = "ws://IoT.ScheduleCare.ca:8083";
-    let userName = "Cam-n-Nev";
-    let pwd = "6Z4hn/4X!PLj";
+    // Private EMBED channel
+    // let brokerUrl = "ws://IoT.ScheduleCare.ca:8083";
+    // let userName = "Cam-n-Nev";
+    // let pwd = "6Z4hn/4X!PLj";
 
-    client = mqtt.connect(brokerUrl, {
-        username: userName,
-        password: pwd,
-    });
+    // client = mqtt.connect(brokerUrl, {
+    //     username: userName,
+    //     password: pwd,
+    // });
+
+    // Public Mosquitto
+    let brokerUrl = "wss://test.mosquitto.org:8081/mqtt";
+    client = mqtt.connect(brokerUrl);
 
     client.on("connect", () => {
         console.log("Connected to MQTT broker");
@@ -63,8 +74,6 @@ function disconnectFromMqttBroker() {
 }
 
 function sendCommand(cmd) {
-    let topic = "EMBED/CamNev/m5stickcplus/robot/control";
-
     if (client && client.connected) {
         client.publish(topic, cmd);
         console.log(`Send Command ${cmd}`);
